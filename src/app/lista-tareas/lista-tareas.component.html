@@ -1,0 +1,19 @@
+<div class="container justify-content-center text-center">
+    <h1>Administración de artículos</h1>
+    <table>
+      <tr>
+        <th>Titulo</th>
+        <th>Descripcion</th>
+        <th>Terminado</th>
+        
+      </tr>
+      <!-- Elementos del array que se mostraran en la tabla -->
+      <tr *ngFor="let item of datosPull"><!--  -->
+        <td>{{item.titulo}}</td>
+        <td>{{item.descripcion}}</td>
+        <td>{{item.complete}}<button >Finalizado?</button></td>
+        <!-- Botones de acción de la tabla -->
+        <!--<td></td> (click)="deleteItem(item.codigo)" -->
+      </tr>
+    </table>
+  </div>
