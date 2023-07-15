@@ -8,11 +8,14 @@
         
       </tr>
       <!-- Elementos del array que se mostraran en la tabla -->
-      <tr *ngFor="let item of datosPull"><!--  -->
+      <tr *ngFor="let item of datosPull" [ngClass]="{
+        'noComplete': item.complete === false,
+        'complete': item.complete === true
+        }">
         <td>{{item.titulo}}</td>
         <td>{{item.descripcion}}</td>
         <td>
-            <button  class="btn btn-primary mx-1">Finalizado</button>
+            <button  class="btn btn-primary mx-1" (click)="completeTarea(item)">Finalizado</button>
             <button  class="btn btn-primary mx-1" (click)="deleteTarea(item)">Borrar</button>
         </td>
       </tr>

@@ -16,4 +16,14 @@ export class ListaTareasComponent {
       this.datosPull!.splice(index, 1);
     }
   }
+  completeTarea(itemSend:any){
+    let index = this.datosPull!.findIndex((item: any) => item === itemSend);
+    if (index !== -1) {
+      if(!this.datosPull![index].complete){
+        this.datosPull![index].complete=true;
+      }else{
+        this.datosPull![index].complete=false;
+      }
+    }
+  }
 }
