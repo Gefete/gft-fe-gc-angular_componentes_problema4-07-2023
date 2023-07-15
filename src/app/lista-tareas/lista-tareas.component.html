@@ -1,6 +1,6 @@
 <div class="container justify-content-center text-center">
     <h1>Administración de artículos</h1>
-    <table>
+    <table class="table table-bordered table-striped m-4">
       <tr>
         <th>Titulo</th>
         <th>Descripcion</th>
@@ -11,9 +11,10 @@
       <tr *ngFor="let item of datosPull"><!--  -->
         <td>{{item.titulo}}</td>
         <td>{{item.descripcion}}</td>
-        <td>{{item.complete}}<button >Finalizado?</button></td>
-        <!-- Botones de acción de la tabla -->
-        <!--<td></td> (click)="deleteItem(item.codigo)" -->
+        <td>
+            <button  class="btn btn-primary mx-1">Finalizado</button>
+            <button  class="btn btn-primary mx-1" (click)="deleteTarea(item)">Borrar</button>
+        </td>
       </tr>
     </table>
   </div>

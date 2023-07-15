@@ -9,5 +9,11 @@ export class ListaTareasComponent {
 
   @Input()
   datosPull: any;
-  
+
+  deleteTarea(itemSend:any){
+    let index = this.datosPull!.findIndex((item: any) => item === itemSend);
+    if (index !== -1) {
+      this.datosPull!.splice(index, 1);
+    }
+  }
 }
